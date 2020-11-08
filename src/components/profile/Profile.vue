@@ -25,10 +25,15 @@
             Адрес: {{user.address}}
           </p>
           <router-link :to="{name: 'EditProfile', params: { id: this.user.id }}"
-                       class="btn btn-dark btn-lg"
+                       class="btn btn-dark btn-lg mb-3"
           >
             Редактировать данные
           </router-link>
+          <div>
+            <a href="#" @click.prevent="logOut">
+              Выйти
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -64,6 +69,10 @@ export default {
       'GET_USERS',
       'AUTH'
     ]),
+    logOut() {
+      this.AUTH('');
+      this.$router.push({ name: 'Login' });
+    }
   },
   computed: {
     ...mapGetters([
