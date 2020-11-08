@@ -18,6 +18,7 @@
               <input class="form-control form-control-lg"
                      v-model="password"
                      placeholder="Пароль"
+                     type="password"
               >
               <div class="message">{{ validation.firstError('password') }}</div>
             </div>
@@ -27,6 +28,9 @@
               >
                 Войти
               </button>
+            </div>
+            <div class="form-group">
+              {{msg}}
             </div>
             <router-link class="btn-link"
                          :to="{name: 'Register'}">
@@ -52,6 +56,7 @@ export default {
       email: '',
       password: '',
       users: [],
+      msg: '',
     }
   },
   validators: {
@@ -65,12 +70,14 @@ export default {
   computed: {
     ...mapGetters([
       'USERS',
+      'AUTH_VAL'
     ]),
 
   },
   methods: {
     ...mapActions([
       'GET_USERS',
+      'AUTH'
     ]),
     submit: function () {
       let self = this;
@@ -78,9 +85,20 @@ export default {
           .then(function(success) {
             if (success) {
               self.users = self.users.filter(function (item) {
-                return (item.email === self.email && item.password === self.password);
+                if (item.email === self.email && item.password === self.password) {
+                  return (item.email === self.email && item.password === self.password);
+                }
+                else if (item.email === self.email && item.password != self.password) {
+                  self.msg = 'Неверный пароль'
+                }
+                else {
+                  self.msg = 'Пользователя с такими данными не найдено'
+                }
               });
-              self.$router.push({ name: 'Profile', params: { id: self.users[0].id } });
+              if (self.users.length === 1) {
+                self.$router.push({ name: 'Profile', params: { id: self.users[0].id } });
+                self.AUTH(self.users[0].id);
+              }
             }
           });
     }

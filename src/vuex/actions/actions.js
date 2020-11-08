@@ -13,5 +13,8 @@ export default {
                 console.log(error);
                 return error;
             })
+    },
+    AUTH({commit}, val) {
+        commit('AUTH', val)
     }
 }

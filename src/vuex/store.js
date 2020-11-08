@@ -9,7 +9,8 @@ Vue.use(Vuex)
 
 let store = new Vuex.Store({
     state: {
-        users: []
+        users: [],
+        isAuth: '',
     },
     mutations,
     actions,

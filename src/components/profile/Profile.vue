@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <div class="container">
+    <div v-if="isAuth.length" class="container">
       <div class="row">
         <div class="col-sm-12 col-md-4">
           <img :src="user.picture" class="img-fluid">
@@ -41,6 +41,7 @@ export default {
   name: "Profile",
   data() {
     return {
+      isAuth: '',
       users: [],
       user: {
         address: '',
@@ -61,11 +62,13 @@ export default {
   methods: {
     ...mapActions([
       'GET_USERS',
+      'AUTH'
     ]),
   },
   computed: {
     ...mapGetters([
       'USERS',
+      'AUTH_VAL'
     ]),
 
   },
@@ -80,6 +83,10 @@ export default {
             self.user = self.users[0];
           }
         });
+    this.isAuth = this.AUTH_VAL;
+    if (this.isAuth === '') {
+      self.$router.push({ name: 'Login' });
+    }
   },
 }
 </script>

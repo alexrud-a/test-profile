@@ -84,6 +84,7 @@ export default {
   name: "EditProfile",
   data() {
     return {
+      isAuth: '',
       user: {
         address: '',
         age: '',
@@ -120,7 +121,7 @@ export default {
   methods: {
     ...mapActions([
       'GET_USERS',
-      'UPDATE_USER'
+      'AUTH'
     ]),
     submit: function () {
       let self = this;
@@ -146,6 +147,7 @@ export default {
   computed: {
     ...mapGetters([
       'USERS',
+      'AUTH_VAL'
     ]),
 
   },
@@ -160,6 +162,10 @@ export default {
             self.user = self.users[0];
           }
         });
+    this.isAuth = this.AUTH_VAL;
+    if (this.isAuth === '') {
+      self.$router.push({ name: 'Login' });
+    }
   },
 
 }

@@ -12,11 +12,11 @@
             </router-link>
           </li>
           <li class="nav-item"
-              v-if="isLogin"
+              v-if="isAuth.length"
           >
             <router-link
                 class="nav-link"
-                :to="{name: 'Profile'}"
+                :to="{name: 'Profile', params: { id: isAuth } }"
             >
               Личный кабинет
             </router-link>
@@ -38,12 +38,31 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
 export default {
   name: "Header",
   data() {
     return {
-      isLogin: false
+      isAuth: '',
     }
+  },
+  methods: {
+    ...mapActions([
+      'AUTH'
+    ]),
+  },
+  computed: {
+    ...mapGetters([
+      'AUTH_VAL'
+    ]),
+  },
+  watch: {
+    AUTH_VAL() {
+      this.isAuth = this.AUTH_VAL;
+    }
+  },
+  created() {
+    this.isAuth = this.AUTH_VAL;
   }
 }
 </script>
