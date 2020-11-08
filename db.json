@@ -139,6 +139,20 @@
       "password": "ojvZ6tCL",
       "phone": "+7 (991) 405-1729",
       "picture": "http://placehold.it/400x400"
+    },
+    {
+      "address": "",
+      "age": "",
+      "company": "",
+      "email": "test@test.ru",
+      "id": "30e17280-21c4-11eb-a2fb-6573ab52d8c7",
+      "name": {
+        "first": "1",
+        "last": "1"
+      },
+      "password": "123456789",
+      "phone": "+7 (999) 999-99-99",
+      "picture": "http://placehold.it/400x400"
     }
   ]
 }

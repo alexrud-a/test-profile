@@ -45,7 +45,7 @@
               <label for="user-phone">
                 Телефон
               </label>
-              <input class="form-control form-control-lg" v-model="user.phone" id="user-phone">
+              <input class="form-control form-control-lg" v-model="user.phone" id="user-phone" v-mask="'+7 (###) ###-##-##'">
               <div class="message">{{ validation.firstError('user.phone') }}</div>
             </div>
             <div class="form-group">
@@ -105,11 +105,14 @@ export default {
     'user.name.first': function(value) {
       return Validator.value(value).required('Поле обязательно для заполнения');
     },
+    'user.name.last': function(value) {
+      return Validator.value(value).required('Поле обязательно для заполнения');
+    },
     'user.age': function(value) {
       return Validator.value(value).integer('Некорректный возраст').between(18, 90, 'Вам должно быть не меньше 18 и не больше 90');
     },
     'user.phone': function(value) {
-      return Validator.value(value).required('Поле обязательно для заполнения');
+      return Validator.value(value).required('Поле обязательно для заполнения').length(18, 'Поле телефон должно содержать 10 цифр');
     },
     'user.email': function(value) {
       return Validator.value(value).required('Поле обязательно для заполнения').email('Некорректный Email');

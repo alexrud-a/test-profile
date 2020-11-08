@@ -9,19 +9,19 @@
           <h1>
             {{user.name.first}} {{user.name.last}}
           </h1>
-          <p>
+          <p v-if="user.age">
             {{user.age}} лет
           </p>
-          <p>
+          <p v-if="user.company">
             Место работы: {{user.company}}
           </p>
-          <p>
+          <p v-if="user.email">
             Email: {{user.email}}
           </p>
-          <p>
+          <p v-if="user.phone">
             Телефон: {{user.phone}}
           </p>
-          <p>
+          <p v-if="user.address">
             Адрес: {{user.address}}
           </p>
           <router-link :to="{name: 'EditProfile', params: { id: this.user.id }}"
