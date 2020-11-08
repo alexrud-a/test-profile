@@ -28,6 +28,10 @@
                 Войти
               </button>
             </div>
+            <router-link class="btn-link"
+                         :to="{name: 'Register'}">
+              Регистрация
+            </router-link>
           </form>
         </div>
       </div>

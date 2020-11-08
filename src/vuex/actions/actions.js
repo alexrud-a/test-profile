@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     GET_USERS({commit}) {
-        return axios('https://next.json-generator.com/api/json/get/4ybQxUytF', {
+        return axios('http://localhost:3000/users', {
             method: "GET"
         })
             .then((users) => {
@@ -13,5 +13,5 @@ export default {
                 console.log(error);
                 return error;
             })
-    },
+    }
 }

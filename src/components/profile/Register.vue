@@ -1,11 +1,11 @@
 <template>
-  <div class="profile">
+  <div class="register">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <img :src="user.picture" class="img-fluid">
-        </div>
-        <div class="col-sm-12 col-md-8">
+        <div class="col-sm-12">
+          <h1 class="text-center">
+            Регистрация
+          </h1>
           <form class="form" @submit.prevent="submit">
             <div class="form-group">
               <label for="user-name">
@@ -63,9 +63,16 @@
             </div>
             <div class="form-group">
               <button class="btn btn-dark btn-lg">
-                Сохранить
+                Зарегистрироваться
               </button>
             </div>
+            <div class="form-group">
+              {{msg}}
+            </div>
+            <router-link class="btn-link"
+                         :to="{name: 'Login'}">
+              Авторизация
+            </router-link>
           </form>
         </div>
       </div>
@@ -74,16 +81,19 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from "vuex";
 import SimpleVueValidator from 'simple-vue-validator';
+import {mapActions, mapGetters} from "vuex";
 import axios from "axios";
+import { v1 as uuidv1 } from 'uuid';
+
 const Validator = SimpleVueValidator.Validator;
 
 export default {
   mixins: [SimpleVueValidator.mixin],
-  name: "EditProfile",
+  name: "Register",
   data() {
     return {
+      users: [],
       user: {
         address: '',
         age: '',
@@ -98,6 +108,7 @@ export default {
         phone: '',
         picture: ''
       },
+      msg: ''
     }
   },
   validators: {
@@ -117,18 +128,26 @@ export default {
       return Validator.value(value).required('Поле обязательно для заполнения');
     },
   },
+  computed: {
+    ...mapGetters([
+      'USERS',
+    ]),
+
+  },
   methods: {
     ...mapActions([
       'GET_USERS',
-      'UPDATE_USER'
     ]),
     submit: function () {
       let self = this;
       this.$validate()
           .then(function(success) {
             if (success) {
-              axios('http://localhost:3000/users/'+self.user.id, {
-                method: "PATCH",
+              self.user.id = uuidv1();
+              self.user.picture = "http://placehold.it/400x400",
+              console.log(self.user);
+              axios('http://localhost:3000/users/', {
+                method: "POST",
                 data: self.user,
               })
                   .then((resp) => {
@@ -143,28 +162,27 @@ export default {
           });
     }
   },
-  computed: {
-    ...mapGetters([
-      'USERS',
-    ]),
-
-  },
   created() {
     let self = this;
     self.GET_USERS()
         .then((response) => {
           if (response.data) {
-            self.users = [...self.USERS].filter(function (item) {
-              return item.id === self.$route.params.id
-            });
-            self.user = self.users[0];
+            self.users = [...self.USERS]
           }
         });
-  },
-
+  }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.register {
+  .form {
+    max-width: 400px;
+    margin: 40px auto;
 
+    .btn {
+      width: 100%;
+    }
+  }
+}
 </style>

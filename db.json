@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": "5fa666b40505d61a42146344",
+      "picture": "http://placehold.it/400x400",
+      "age": "35",
+      "name": {
+        "first": "Chris1",
+        "last": "Gill1"
+      },
+      "company": "REVERSUS",
+      "email": "chris.gill@reversus.me",
+      "phone": "+7 (893) 409-3502",
+      "address": "846 Sumner Place, Hebron, Florida, 3374",
+      "password": "fa11fdea-9499-4988-96dc-643fb2d4af4d"
+    },
+    {
+      "id": "5fa666b4f5cd23771042294e",
+      "picture": "http://placehold.it/400x400",
+      "age": 28,
+      "name": {
+        "first": "Eileen",
+        "last": "Moran"
+      },
+      "company": "SKYPLEX",
+      "email": "eileen.moran@skyplex.ca",
+      "phone": "+7 (821) 445-3502",
+      "address": "435 Nassau Avenue, Jeff, Delaware, 7626",
+      "password": "d1f20310-958f-4bab-a46c-5282f35a4271"
+    },
+    {
+      "id": "5fa666b4b79aab23f64fd503",
+      "picture": "http://placehold.it/400x400",
+      "age": 38,
+      "name": {
+        "first": "Winifred",
+        "last": "Avila"
+      },
+      "company": "BALUBA",
+      "email": "winifred.avila@baluba.net",
+      "phone": "+7 (954) 431-3817",
+      "address": "906 Lake Street, Roosevelt, Illinois, 2672",
+      "password": "a93d879c-63cd-4570-a561-e4b9a848540a"
+    },
+    {
+      "id": "5fa666b451dabeee6d581df1",
+      "picture": "http://placehold.it/400x400",
+      "age": 31,
+      "name": {
+        "first": "Solis",
+        "last": "Johnston"
+      },
+      "company": "CUJO",
+      "email": "solis.johnston@cujo.com",
+      "phone": "+7 (910) 454-2740",
+      "address": "433 Dekalb Avenue, Yettem, Louisiana, 1894",
+      "password": "838326f8-2bc0-4c23-857d-0ec5132843f8"
+    },
+    {
+      "id": "5fa666b42c54bb6b69e52355",
+      "picture": "http://placehold.it/400x400",
+      "age": 25,
+      "name": {
+        "first": "Mcneil",
+        "last": "Nielsen"
+      },
+      "company": "BLURRYBUS",
+      "email": "mcneil.nielsen@blurrybus.info",
+      "phone": "+7 (830) 450-3982",
+      "address": "375 Wythe Place, Needmore, Texas, 7357",
+      "password": "7c04834c-93ef-487b-a0eb-835b5ce56161"
+    },
+    {
+      "id": "5fa666b45e1b37085c99a295",
+      "picture": "http://placehold.it/400x400",
+      "age": 21,
+      "name": {
+        "first": "Avis",
+        "last": "Sanchez"
+      },
+      "company": "AUTOMON",
+      "email": "avis.sanchez@automon.co.uk",
+      "phone": "+7 (982) 505-2734",
+      "address": "788 Gem Street, Taft, Alabama, 7693",
+      "password": "a89a119d-642c-409e-9c40-8ccc8b0e005e"
+    },
+    {
+      "id": "5fa666b4b878047d6ece6d7c",
+      "picture": "http://placehold.it/400x400",
+      "age": 31,
+      "name": {
+        "first": "Dean",
+        "last": "Mcmahon"
+      },
+      "company": "VALPREAL",
+      "email": "dean.mcmahon@valpreal.tv",
+      "phone": "+7 (926) 526-3959",
+      "address": "593 Grimes Road, Convent, Utah, 2427",
+      "password": "052115bf-fe7a-4e14-b708-a2777d4220e2"
+    },
+    {
+      "id": "5fa666b41f69cad6474ba2c7",
+      "picture": "http://placehold.it/400x400",
+      "age": 27,
+      "name": {
+        "first": "Susie",
+        "last": "Mann"
+      },
+      "company": "FISHLAND",
+      "email": "susie.mann@fishland.biz",
+      "phone": "+7 (898) 579-2966",
+      "address": "823 Herbert Street, Nadine, South Carolina, 6667",
+      "password": "22f99fe4-a901-4827-89de-a3b1fe7446d4"
+    },
+    {
+      "id": "5fa666b412e2037769149789",
+      "picture": "http://placehold.it/400x400",
+      "age": 40,
+      "name": {
+        "first": "Sims",
+        "last": "Cox"
+      },
+      "company": "NETERIA",
+      "email": "sims.cox@neteria.biz",
+      "phone": "+7 (975) 529-2495",
+      "address": "311 Cortelyou Road, Lopezo, Virgin Islands, 3016",
+      "password": "2a3e10a9-3180-4a65-a4c9-8e8e64fac5ef"
+    },
+    {
+      "address": "Belgorod",
+      "age": "27",
+      "company": "Developer",
+      "email": "alexrud-a@yandex.ru",
+      "id": "b21d6de0-219c-11eb-8503-15bfd50142fb",
+      "name": {
+        "first": "AleX",
+        "last": "Rudivickaya"
+      },
+      "password": "ojvZ6tCL",
+      "phone": "+79914051729",
+      "picture": "http://placehold.it/400x400"
+    }
+  ]
+}
