@@ -150,7 +150,7 @@ export default {
           .then(function(success) {
             if (success) {
               self.user.id = uuidv1();
-              self.user.picture = "http://placehold.it/400x400",
+              self.user.picture = "https://placeimg.com/400/400/people",
               console.log(self.user);
               axios('http://localhost:3000/users/', {
                 method: "POST",
